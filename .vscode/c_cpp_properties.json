@@ -1,0 +1,46 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}",
+                    "/usr/include",
+                    "/usr/local/include",
+                    "/usr/include/c++/*",
+                    "/usr/include/c++/4.8",
+                    "/usr/include/c++/4.8/*",
+                    "/usr/include/boost",
+                    "/usr/include/boost/**",
+                    "/usr/lib/gcc/x86_64-linux-gnu/4.8/include",
+                    "/usr/lib/gcc/x86_64-linux-gnu/4.8/include/*",
+                    "/usr/include/opencv",
+                    "/usr/include/opencv2",
+                    "/usr/include/gflags"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/include",
+                "/usr/local/include",
+                "/usr/include/c++/*",
+                "/usr/include/c++/4.8",
+                "/usr/include/c++/4.8/*",
+                "/usr/include/boost",
+                "/usr/include/boost/**",
+                "/usr/lib/gcc/x86_64-linux-gnu/4.8/include",
+                "/usr/lib/gcc/x86_64-linux-gnu/4.8/include/*",
+                "/usr/include/opencv",
+                "/usr/include/opencv2",
+                "/usr/include/gflags"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}

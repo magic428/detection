@@ -10,31 +10,33 @@ using namespace cv;
 using namespace std;
 using namespace chrono;
 
+#undef USE_CAMERA
+// #define CONTOUR_MIN_LENGTH  40
+
 class Capture
 {
-	const int MINRECTPERIMETR = 50;
+    const int MINRECTPERIMETR = 50;
+    const int CONTOUR_MIN_LENGTH = 30;
 
-	VideoCapture capture;
-	milliseconds currentTime, lastTime;
-	const int timeRange = 3000; // in milliseconds
-	int fps;
+    VideoCapture capture;
+    milliseconds currentTime, lastTime;
+    const int timeRange = 3000; // in milliseconds
+    int fps;
 
-
-	vector <Point2f> getFeaturePoints(vector<Point>);
-	void displayTime(Mat);
-	vector<Rect> uniteRect(vector<vector<Point>>);
-	vector<vector<Point>> uniteContours(vector<vector<Point>>);
-	vector<Point> convertBack(vector<Point2f>);
-	vector <Point2f> getPoints(Rect);
+    vector <Point2f> getFeaturePoints(vector<Point>);
+    void displayTime(Mat);
+    vector<Rect> uniteRect(vector<vector<Point>>);
+    vector<vector<Point>> uniteContours(vector<vector<Point>>);
+    vector<Point> convertBack(vector<Point2f>);
+    vector <Point2f> getPoints(Rect);
 
 public:
-	Capture(int);
-	Capture(string);
-	~Capture();
-	bool isOpened();
-	Mat getFrame();
-	void find(map<milliseconds, Frame>&, mutex&, vector<map<milliseconds, vector<Point>>>&, mutex&);
-	void cut(map<milliseconds, Frame>&, mutex&, vector<map<milliseconds, vector<Point>>>&, mutex&);
-	void display(map<milliseconds, Frame>&, mutex&, vector<map<milliseconds, vector<Point>>>&, mutex&);
-
+    Capture(int);
+    Capture(string);
+    ~Capture();
+    bool isOpened();
+    Mat getFrame();
+    void find(map<milliseconds, Frame>&, mutex&, vector<map<milliseconds, vector<Point>>> &, mutex&);
+    void cut(map<milliseconds, Frame>&, mutex&, vector<map<milliseconds, vector<Point>>> &, mutex&);
+    void display(map<milliseconds, Frame>&, mutex&, vector<map<milliseconds, vector<Point>>>&, mutex&);
 };
